@@ -21,6 +21,10 @@ app.use(cookieParser());
 app.use('/uploads', express.static(__dirname + '/uploads'));
 
 mongoose.connect('mongodb+srv://aditya0102be21:mWjLsgxFGJEiK3yY@cluster0.rtsoypm.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0');
+app.get('/',async(req,res)=>{
+  res.json({message: "hello frmds"});
+})
+
 
 const conformationEmail = (email)=>{
   var transporter = nodemailer.createTransport({
@@ -199,9 +203,6 @@ app.get('/post/:id', async (req, res) => {
   res.json(postDoc);
 })
 
-app.get('/',async(req,res)=>{
-  res.json({message: "hello frmds"});
-})
 
 app.listen(4000);
 //
