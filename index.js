@@ -199,5 +199,9 @@ app.get('/post/:id', async (req, res) => {
   res.json(postDoc);
 })
 
+app.get('/',async(req,res)=>{
+  res.json({message: "hello frmds"});
+})
+
 app.listen(4000);
 //
